@@ -29,27 +29,19 @@ export const HeaderMenu = () => {
     return (
         <AppBar position="sticky">
             <Container maxWidth="xl">
-                <Toolbar disableGutters>
+                <Toolbar disableGutters sx={{
+                    justifyContent: {
+                        xs: 'center', md: 'flex-start'
+                    }
+                }}>
                     <Box
                         component="img"
                         sx={{
                             height: 30,
-                            display: { xs: 'none', md: 'flex' }, mr: 1
+                            mx: { md: 2 }
                         }}
                         alt="Shawn Mendes"
                         src={logoImage}
-                        className='flex justify-content-center'
-                    />
-                    <Box
-                        component="img"
-                        sx={{
-                            flexGrow: 0,
-                            height: 30,
-                            display: { xs: 'flex', md: 'none' }, mr: 2
-                        }}
-                        alt="Shawn Mendes"
-                        src={logoImage}
-                        className='flex justify-content-center'
                     />
 
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
