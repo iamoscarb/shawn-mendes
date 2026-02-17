@@ -1,30 +1,39 @@
-import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
+
+import { useEffect, useState } from 'react';
+import { AppBar, Collapse, useMediaQuery, useTheme } from '@mui/material';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
-import MenuItem from '@mui/material/MenuItem';
 
 
 const pages = ['Music', 'Videos', 'Tour', 'Subscribe'];
 const logoImage = 'https://www.shawnmendesofficial.com/wp-content/uploads/sites/2687/2024/07/Shawn-Mendes-600x85.png'
 
 export const HeaderMenu = () => {
-    const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null);
+    const [openMenu, setOpenMenu] = useState(false)
 
-    const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
-        setAnchorElNav(event.currentTarget);
+    const theme = useTheme();
+    const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
+
+    const handleOpenNavMenu = () => {
+        setOpenMenu((prev) => {
+            return !prev;
+        })
     };
 
-    const handleCloseNavMenu = () => {
-        setAnchorElNav(null);
-    };
+    const handleOpenMenu = () => {
+        console.log('open menu')
+    }
 
+    useEffect(() => {
+        if (isDesktop && openMenu) {
+            setOpenMenu(false)
+        }
+    }, [isDesktop, openMenu])
 
     return (
         <AppBar position="sticky">
@@ -48,8 +57,8 @@ export const HeaderMenu = () => {
                         {pages.map((page) => (
                             <Button
                                 key={page}
-                                onClick={handleCloseNavMenu}
-                                sx={{ my: 2, color: 'white', display: 'block' }}
+                                onClick={handleOpenMenu}
+                                sx={{ my: 2, mx: 0.5, color: 'white', display: 'block' }}
                             >
                                 {page}
                             </Button>
@@ -63,35 +72,33 @@ export const HeaderMenu = () => {
                             aria-haspopup="true"
                             onClick={handleOpenNavMenu}
                             color="inherit"
+                            className='transition-all duration-900'
                         >
-                            <MenuIcon />
+                            {openMenu ? <CloseIcon /> : <MenuIcon />}
                         </IconButton>
-                        <Menu
-                            id="menu-appbar"
-                            anchorEl={anchorElNav}
-                            anchorOrigin={{
-                                vertical: 'bottom',
-                                horizontal: 'left',
-                            }}
-                            keepMounted
-                            transformOrigin={{
-                                vertical: 'top',
-                                horizontal: 'left',
-                            }}
-                            open={Boolean(anchorElNav)}
-                            onClose={handleCloseNavMenu}
-                            sx={{ display: { xs: 'block', md: 'none' } }}
-                        >
-                            {pages.map((page) => (
-                                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                    <Typography sx={{ textAlign: 'center' }}>{page}</Typography>
-                                </MenuItem>
-                            ))}
-                        </Menu>
                     </Box>
                 </Toolbar>
             </Container>
+            <Collapse in={openMenu} timeout="auto" unmountOnExit>
+                <Box sx={{
+                    height: '89vh',
+                    width: '100%',
+                    bgcolor: 'black',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    pt: 5
+                }}>
+                    {pages.map((page) => (
+                        <h2 key={page} onClick={handleOpenNavMenu} style={{ margin: '20px 0' }}
+                            className='text-xl hover:text-gray-700'>
+                            {page.toUpperCase()}
+                        </h2>
+                    ))}
+                </Box>
+            </Collapse>
         </AppBar>
+
     );
 }
 
