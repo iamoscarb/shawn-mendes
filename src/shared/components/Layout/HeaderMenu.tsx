@@ -1,16 +1,15 @@
-
 import { useEffect, useState } from 'react';
-import { AppBar, Collapse, useMediaQuery, useTheme } from '@mui/material';
+import { AppBar, Button, Collapse, useMediaQuery, useTheme } from '@mui/material';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import Container from '@mui/material/Container';
-import Button from '@mui/material/Button';
+import { Link } from 'react-router';
 
 
-const pages = ['Music', 'Videos', 'Tour', 'Subscribe'];
+const pages = [{ name: 'Music', root: '/music' }, { name: 'Videos', root: '/videos' }, { name: 'Tour', root: '/tour' }, { name: 'Subscribe', root: '/' }];
 const logoImage = 'https://www.shawnmendesofficial.com/wp-content/uploads/sites/2687/2024/07/Shawn-Mendes-600x85.png'
 
 export const HeaderMenu = () => {
@@ -24,10 +23,6 @@ export const HeaderMenu = () => {
             return !prev;
         })
     };
-
-    const handleOpenMenu = () => {
-        console.log('open menu')
-    }
 
     useEffect(() => {
         if (isDesktop && openMenu) {
@@ -55,12 +50,10 @@ export const HeaderMenu = () => {
 
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         {pages.map((page) => (
-                            <Button
-                                key={page}
-                                onClick={handleOpenMenu}
-                                sx={{ my: 2, mx: 0.5, color: 'white', display: 'block' }}
-                            >
-                                {page}
+                            <Button component={Link} key={page.name}
+                                to={page.root} className='white-text'
+                                sx={{ my: 2, mx: 0.5, color: 'white', display: 'block' }}>
+                                {page.name}
                             </Button>
                         ))}
                     </Box>
@@ -72,8 +65,7 @@ export const HeaderMenu = () => {
                             aria-haspopup="true"
                             onClick={handleOpenNavMenu}
                             color="inherit"
-                            className='transition-all duration-900'
-                        >
+                            className='transition-all duration-900'>
                             {openMenu ? <CloseIcon /> : <MenuIcon />}
                         </IconButton>
                     </Box>
@@ -90,10 +82,10 @@ export const HeaderMenu = () => {
                     pt: 5
                 }}>
                     {pages.map((page) => (
-                        <h2 key={page} onClick={handleOpenNavMenu} style={{ margin: '20px 0' }}
-                            className='text-xl hover:text-gray-700'>
-                            {page.toUpperCase()}
-                        </h2>
+                        <Button component={Link} key={page.name} onClick={handleOpenNavMenu} style={{ margin: '20px 0' }}
+                            className='text-xl hover:text-gray-700' to={page.root}>
+                            {page.name.toUpperCase()}
+                        </Button>
                     ))}
                 </Box>
             </Collapse>

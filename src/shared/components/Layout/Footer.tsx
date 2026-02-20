@@ -15,7 +15,7 @@ export const Footer = () => {
             <div className="grid grid-flow-col gap-3">
                 {
                     socialMediaList.map((social) => (
-                        <IconButton aria-label={social.nameSocial}>
+                        <IconButton aria-label={social.nameSocial} key={social.nameSocial}>
                             {SocialMediaIcons[social.nameSocial]}
                         </IconButton>
                     ))
