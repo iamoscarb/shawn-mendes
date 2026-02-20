@@ -53,7 +53,7 @@ function App() {
 
   return (
     <>
-      <Box className="p-5 md:p-8 lg:p-9 bg-purple-950">
+      <Box className="p-5 md:p-8 lg:p-9" sx={{ bgcolor: 'secondary.main' }}>
         <CardMedia albumInfo={shawnInfo} onSongClicked={handleSongClick} />
         <GroupButton services={shawnInfo.albumLink} onButtonClicked={handleServiceClick} />
         <DialogVideo song={songData} openDialog={openDialog} closeDialog={handleCloseDialog} />
