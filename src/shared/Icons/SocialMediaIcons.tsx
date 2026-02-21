@@ -6,9 +6,9 @@ import YouTubeIcon from '@mui/icons-material/YouTube';
 import TiktokIcon from "./TikTokIcon";
 
 export const SocialMediaIcons: Record<string, JSX.Element> = {
-    facebook: <FacebookIcon />,
-    instagram: <InstagramIcon />,
-    x: <XIcon />,
-    youtube: <YouTubeIcon />,
-    tiktok: <TiktokIcon color="primary" />
+    facebook: <FacebookIcon className='text-white' />,
+    instagram: <InstagramIcon className='text-white' />,
+    x: <XIcon className='text-white' />,
+    youtube: <YouTubeIcon className='text-white' />,
+    tiktok: <TiktokIcon color="#fff" />
 }
