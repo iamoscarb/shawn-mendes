@@ -38,8 +38,8 @@ export const CardMedia: FC<Props> = ({ albumInfo, onSongClicked }) => {
             />
             <Box className="flex flex-col w-full pt-2 md:pl-2 md:pt-0">
                 <CardContent sx={{ flex: '1 0 auto' }}>
-                    <h1 className="text-center text-2xl font-medium md:text-left text-white bt-0">{albumName}</h1>
-                    <h2 className="text-center text-white mb-1 md:text-left">{albumSinger}</h2>
+                    <h1 className="text-center text-2xl font-medium md:text-left text-[color:var(--mui-palette-text-primary)] bt-0">{albumName}</h1>
+                    <h2 className="text-center text-[color:var(--mui-palette-text-primary)] mb-1 md:text-left">{albumSinger}</h2>
                     <div className="songs-card w-full max-h-68 md:max-h-55 overflow-y-auto">
                         {
                             albumTracks.map((song) => (
@@ -50,14 +50,14 @@ export const CardMedia: FC<Props> = ({ albumInfo, onSongClicked }) => {
                                         <div className="w-5 flex justify-center items-center">
                                             <span className="text-gray-500 text-sm group-hover:hidden">{song.track}</span>
 
-                                            <svg className="hidden group-hover:block w-3 h-3 text-white fill-current" viewBox="0 0 24 24">
+                                            <svg className="hidden group-hover:block w-3 h-3 text-[color:var(--mui-palette-text-primary)] fill-current" viewBox="0 0 24 24">
                                                 <path d="M7 6v12l10-6z"></path>
                                             </svg>
                                         </div>
 
                                         <div className="flex flex-col text-left">
-                                            <h3 className="text-white font-medium leading-tight text-[15px] w-70">{song.name}</h3>
-                                            <p className="text-[13px] text-gray-400 group-hover:text-white">{song.singer}</p>
+                                            <h3 className="text-[color:var(--mui-palette-text-primary)] font-medium leading-tight text-[15px] w-70">{song.name}</h3>
+                                            <p className="text-[13px] text-gray-700 group-hover:text-[color:var(--mui-palette-text-primary)]">{song.singer}</p>
                                         </div>
                                     </div>
 

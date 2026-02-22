@@ -22,7 +22,7 @@ export const Footer = () => {
                 }
             </div>
             <div className="pt-3 flex justify-center">
-                <a className="text-center" href='https://www.shawnmendesofficial.com/'>&copy; 2026 Shawn Mendes</a>
+                <a className="text-center text-white" href='https://www.shawnmendesofficial.com/'>&copy; 2026 Shawn Mendes</a>
             </div>
         </Box>
     )
