@@ -1,5 +1,6 @@
-import { ImageList, ImageListItem, ImageListItemBar, useMediaQuery, useTheme } from "@mui/material"
+import { ImageList, ImageListItem, ImageListItemBar } from "@mui/material"
 import PlayCircleIcon from '@mui/icons-material/PlayCircle';
+import { useNumColsImgList } from "../../../hooks/useNumColsImgList";
 
 interface VideoList {
     title: string;
@@ -12,15 +13,7 @@ interface Props {
 
 export const MusicVideosList = ({ videosList }: Props) => {
 
-    const theme = useTheme();
-    const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-    const isTablet = useMediaQuery(theme.breakpoints.between('sm', 'md'));
-
-    const getCols = () => {
-        if (isMobile) return 1;
-        if (isTablet) return 2;
-        return 3;
-    };
+    const { getCols } = useNumColsImgList('video');
 
     return (
         <ImageList cols={getCols()} gap={12} sx={{ width: '100%', height: 'auto' }}>
