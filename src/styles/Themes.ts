@@ -4,16 +4,16 @@ export const themes: any = {
     home: createTheme({
         palette: {
             primary: {
-                main: '#003cbd'
+                main: '#1E2833'
             },
             secondary: {
-                main: '#99c1fd'
+                main: '#60666C'
             },
             info: {
                 main: '#dae7ff'
             },
             text: {
-                primary: '#003cbd'
+                primary: '#121216'
             }
         }
     }),
