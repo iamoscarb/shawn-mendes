@@ -32,7 +32,7 @@ export const CardMedia: FC<Props> = ({ albumInfo, onSongClicked }) => {
                 border: 'none'
             }}>
             <img
-                className="w-full h-full md:w-80 md:h-80 rounded-md"
+                className="w-full h-full md:w-80 md:h-80 rounded-lg"
                 src={albumCover}
                 alt={albumName}
             />

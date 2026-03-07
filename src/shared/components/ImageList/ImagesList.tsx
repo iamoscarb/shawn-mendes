@@ -20,7 +20,7 @@ export const ImagesList = ({ photoList }: Props) => {
           <img
             srcSet={item.img}
             src={item.img} alt={item.title} loading="lazy"
-            className='rounded-md' />
+            className='rounded-lg' />
         </ImageListItem>
       ))}
     </ImageList>
