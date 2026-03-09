@@ -7,7 +7,7 @@ export const themes: any = {
                 main: '#1E2833'
             },
             secondary: {
-                main: '#60666C'
+                main: '#9ea0a3'
             },
             info: {
                 main: '#dae7ff'

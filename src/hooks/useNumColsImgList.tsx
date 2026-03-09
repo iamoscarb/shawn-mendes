@@ -1,6 +1,6 @@
 import { useMediaQuery, useTheme } from "@mui/material"
 
-type configType = 'photo' | 'video' | 'default';
+export type configType = 'photo' | 'video' | 'album' | 'default';
 export const useNumColsImgList = (type: configType) => {
 
     const theme = useTheme();
@@ -16,6 +16,11 @@ export const useNumColsImgList = (type: configType) => {
         video: {
             sm: 1,
             md: 2,
+            lg: 3
+        },
+        album: {
+            sm: 2,
+            md: 3,
             lg: 3
         },
         default: {
