@@ -1,12 +1,7 @@
 import { Button } from "@mui/material"
 import type { FC } from "react";
 import { platformIcons } from "../../Icons/platformIcons";
-
-interface LinkInt {
-    key: string;
-    platform: string;
-    link: string;
-}
+import type { LinkInt } from "../../../interfaces/social.interface";
 
 interface Props {
     services: LinkInt[];
