@@ -2,14 +2,7 @@
 import Dialog from '@mui/material/Dialog';
 import DialogContent from '@mui/material/DialogContent';
 import type { FC } from 'react';
-
-interface Songs {
-    track: number;
-    name: string;
-    singer: string;
-    time?: string;
-    url: string;
-}
+import type { Songs } from '../../../interfaces/music.interface';
 
 interface Props {
     song: Songs;

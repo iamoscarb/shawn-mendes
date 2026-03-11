@@ -2,20 +2,7 @@ import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import type { FC } from "react";
-
-interface Songs {
-    track: number;
-    name: string;
-    singer: string;
-    time?: string;
-}
-
-interface Album {
-    albumName: string;
-    albumSinger: string;
-    albumCover: string;
-    albumTracks: Songs[];
-}
+import type { Album, Songs } from '../../../interfaces/music.interface';
 
 interface Props {
     albumInfo: Album;
