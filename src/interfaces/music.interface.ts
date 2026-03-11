@@ -34,6 +34,6 @@ export interface Album {
 export interface AlbumInfo extends Album {
     bannerImages: BannerImg;
     albumLink: StreamingServices[];
-    videosList?: VideoList[];
-    photoList?: MediaList[];
+    videosList: VideoList[];
+    photoList?: MediaList[] | null;
 }
