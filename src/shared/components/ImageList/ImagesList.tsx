@@ -1,9 +1,6 @@
 import { ImageList, ImageListItem } from "@mui/material"
 import { useNumColsImgList } from "../../../hooks/useNumColsImgList"
-interface Images {
-  img: string,
-  title: string
-}
+import type { Images } from "../../../interfaces/images.Interface";
 
 interface Props {
   photoList: Images[]

@@ -1,11 +1,7 @@
 import { ImageList, ImageListItem, ImageListItemBar } from "@mui/material"
 import PlayCircleIcon from '@mui/icons-material/PlayCircle';
 import { useNumColsImgList } from "../../../hooks/useNumColsImgList";
-
-interface VideoList {
-    title: string;
-    img: string;
-}
+import type { VideoList } from "../../../interfaces/images.Interface";
 
 interface Props {
     videosList: VideoList[];

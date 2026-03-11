@@ -1,15 +1,11 @@
 import { ImageList, ImageListItem, ImageListItemBar } from "@mui/material";
 import { Link } from 'react-router';
 import { useNumColsImgList, type configType } from "../../../hooks/useNumColsImgList";
-interface Images {
-    img: string;
-    title: string;
-    subtitle?: string;
-    root: string;
-}
+import type { AlbumImages } from "../../../interfaces/images.Interface";
+
 
 interface Props {
-    photoList: Images[];
+    photoList: AlbumImages[];
     style: configType;
     showTitle?: boolean;
 }
@@ -19,7 +15,7 @@ export const AlbumList = ({ photoList, showTitle, style }: Props) => {
     const { getCols } = useNumColsImgList(style);
 
     return (
-        <ImageList sx={{ width: '100%', height: 'auto' }} variant="standard" cols={getCols()} gap={10}>
+        <ImageList sx={{ width: '100%', height: 'auto' }} variant="standard" cols={getCols()} gap={15}>
             {photoList.map((item) => (
                 <ImageListItem key={item.img} component={Link} to={item.root}>
                     <img
