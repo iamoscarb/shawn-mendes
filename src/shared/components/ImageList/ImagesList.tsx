@@ -1,9 +1,9 @@
 import { ImageList, ImageListItem } from "@mui/material"
 import { useNumColsImgList } from "../../../hooks/useNumColsImgList"
-import type { Images } from "../../../interfaces/images.Interface";
+import type { MediaList } from "../../../interfaces/images.Interface";
 
 interface Props {
-  photoList: Images[]
+  photoList: MediaList[];
 }
 
 export const ImagesList = ({ photoList }: Props) => {
