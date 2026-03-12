@@ -9,16 +9,17 @@ import { BannerImage } from '../../shared/components/Banner/BannerImage';
 import { MusicVideosList } from '../../shared/components/ImageList/MusicVideosList';
 import { ImagesList } from '../../shared/components/ImageList/ImagesList';
 import { CustomDivider } from '../../shared/components/Divider/CustomDivider';
-import { use } from 'react';
-import { getInfoAction } from '../../api/get-info.action';
+import { use, type Usable } from 'react';
 import type { AlbumInfo } from '../../interfaces/music.interface';
 
-const shawnPromise = getInfoAction('shawn');
+interface Props {
+    getData: Usable<AlbumInfo | undefined>
+}
 
-export const AlbumPage = () => {
-    const shawnInfo = use(shawnPromise) as AlbumInfo;
+export const AlbumPage = ({ getData }: Props) => {
+    const shawnInfo = use(getData) as AlbumInfo;
     const { setThemeName } = useThemeSwitcher();
-    setThemeName('shawnAlbum')
+    setThemeName(shawnInfo.albumKey)
     const { handleCloseDialog, handleSongClick, openDialog, songData } = useOpenVideoDialog();
 
     return (
