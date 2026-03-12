@@ -17,7 +17,6 @@ export const themes: any = {
             }
         }
     }),
-
     shawnAlbum: createTheme({
         palette: {
             primary: {
@@ -31,6 +30,22 @@ export const themes: any = {
             },
             text: {
                 primary: '#111'
+            }
+        }
+    }),
+    wonderAlbum: createTheme({
+        palette: {
+            primary: {
+                main: '#62738F'
+            },
+            secondary: {
+                main: '#E7E7E7'
+            },
+            info: {
+                main: '#B8BECE'
+            },
+            text: {
+                primary: '#566177'
             }
         }
     })
