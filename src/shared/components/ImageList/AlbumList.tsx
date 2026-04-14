@@ -1,4 +1,4 @@
-import { ImageList, ImageListItem, ImageListItemBar } from "@mui/material";
+import { Box, ImageList, ImageListItem, ImageListItemBar } from "@mui/material";
 import { Link } from 'react-router';
 import { useNumColsImgList, type configType } from "../../../hooks/useNumColsImgList";
 import type { AlbumImages } from "../../../interfaces/images.Interface";
@@ -26,8 +26,18 @@ export const AlbumList = ({ photoList, showTitle, style }: Props) => {
 
                     {showTitle && (
                         <ImageListItemBar
-                            title={item.title}
-                            subtitle={item?.subtitle}
+                            title={<div className="w-full flex justify-start">
+                                <h2 className="text-lg">{item.title}
+                                    {item?.subtitle && (<span className="font-normal text-sm italic">{` ${item.subtitle}`}</span>)}
+                                </h2>
+                            </div>
+                            }
+                            subtitle={item?.extraInfo?.releasedType && item?.extraInfo?.releasedYear && (
+                                <Box className="w-full flex justify-start text-center" sx={{ color: 'primary.main', borderColor: 'primary.main' }}>
+                                    <p className="w-auto rounded-sm border-2 border-solid py-1 px-2 mr-3">{item.extraInfo.releasedYear}</p>
+                                    <p className="w-auto rounded-sm border-2 border-solid py-1 px-2">{item.extraInfo.releasedType.toUpperCase()}</p>
+                                </Box>
+                            )}
                             position="below" sx={{ color: 'primary.main', fontWeight: 'bold' }} />
                     )}
                 </ImageListItem>

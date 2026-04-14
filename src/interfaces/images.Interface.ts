@@ -1,3 +1,4 @@
+import type { MusicInfo } from "./extraInfo.interface";
 
 //Images
 export interface MediaList {
@@ -8,6 +9,7 @@ export interface MediaList {
 export interface AlbumImages extends MediaList {
     subtitle?: string;
     root: string;
+    extraInfo?: MusicInfo;
 }
 
 //Videos
