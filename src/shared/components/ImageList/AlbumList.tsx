@@ -18,15 +18,17 @@ export const AlbumList = ({ photoList, showTitle, style }: Props) => {
         <ImageList sx={{ width: '100%', height: 'auto' }} variant="standard" cols={getCols()} gap={15}>
             {photoList.map((item) => (
                 <ImageListItem key={item.img} component={Link} to={item.root}>
-                    <img
-                        srcSet={item.img}
-                        src={item.img} alt={item.title} loading="lazy"
-                        className='rounded-lg' />
+                    <div className="overflow-hidden rounded-lg">
+                        <img
+                            src={item.img} alt={item.title} loading="lazy"
+                            className="transition duration-300 ease-in-out hover:scale-110" />
+                    </div>
+
                     {showTitle && (
                         <ImageListItemBar
                             title={item.title}
                             subtitle={item?.subtitle}
-                            position="below" />
+                            position="below" sx={{ color: 'primary.main', fontWeight: 'bold' }} />
                     )}
                 </ImageListItem>
             ))}
