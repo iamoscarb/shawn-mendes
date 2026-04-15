@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export const useOpenVideoDialog = () => {
-    let song = { track: 0, name: '', singer: '', url: 'lS8Ps16Eelg?si=RcL5g2wtZ8ssYLTD' };
+    let song = { track: 0, name: '', singer: '', url: '' };
 
     const [songData, setSongData] = useState(song)
     const [openDialog, setOpenDialog] = useState(false)
