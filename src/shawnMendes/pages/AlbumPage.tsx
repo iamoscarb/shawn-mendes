@@ -9,18 +9,26 @@ import { BannerImage } from '../../shared/components/Banner/BannerImage';
 import { MusicVideosList } from '../../shared/components/ImageList/MusicVideosList';
 import { ImagesList } from '../../shared/components/ImageList/ImagesList';
 import { CustomDivider } from '../../shared/components/Divider/CustomDivider';
-import { use, type Usable } from 'react';
-import type { AlbumInfo } from '../../interfaces/music.interface';
+import type { AlbumNameKey } from '../../interfaces/music.interface';
+import { Navigate, useParams } from 'react-router';
+import { useAlbumEra } from '../../hooks/useAlbumEra';
+import { useEffect } from 'react';
 
-interface Props {
-    getData: Usable<AlbumInfo | undefined>
-}
+export const AlbumPage = () => {
+    const { idAlbum } = useParams();
 
-export const AlbumPage = ({ getData }: Props) => {
-    const shawnInfo = use(getData) as AlbumInfo;
-    const { setThemeName } = useThemeSwitcher();
-    setThemeName(shawnInfo.albumKey)
+    const { data: shawnInfo, isError } = useAlbumEra(idAlbum as AlbumNameKey);
     const { handleCloseDialog, handleSongClick, openDialog, songData } = useOpenVideoDialog();
+    const { setThemeName } = useThemeSwitcher();
+
+    useEffect(() => {
+        if (shawnInfo) {
+            setThemeName(shawnInfo.albumKey);
+        }
+    }, [shawnInfo, setThemeName]);
+
+    if (isError) return <Navigate to='/' />
+    if (!shawnInfo) return <h1>Loading...</h1>
 
     return (
         <>
