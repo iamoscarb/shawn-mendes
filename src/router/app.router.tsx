@@ -2,7 +2,7 @@ import { createBrowserRouter, Navigate } from "react-router";
 import { ShawnHomeLayout } from "../shawnMendes/layout/ShawnHomeLayout";
 import { NotFoundPage } from "../shawnMendes/pages/NotFoundPage";
 import { AlbumPage } from "../shawnMendes/pages/AlbumPage";
-import HomePage from "../shawnMendes/pages/HomePage";
+import { HomePage } from "../shawnMendes/pages/HomePage";
 
 export const appRouter = createBrowserRouter([
     {
