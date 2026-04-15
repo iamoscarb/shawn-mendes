@@ -1,8 +1,8 @@
-import { createBrowserRouter } from "react-router";
-import App from "../App";
+import { createBrowserRouter, Navigate } from "react-router";
 import { ShawnHomeLayout } from "../shawnMendes/layout/ShawnHomeLayout";
-import { AlbumPage } from "../shawnMendes/pages/AlbumPage";
 import { NotFoundPage } from "../shawnMendes/pages/NotFoundPage";
+import { AlbumPage } from "../shawnMendes/pages/AlbumPage";
+import HomePage from "../shawnMendes/pages/HomePage";
 
 export const appRouter = createBrowserRouter([
     {
@@ -11,15 +11,29 @@ export const appRouter = createBrowserRouter([
         children: [
             {
                 index: true,
-                element: <App />
+                element: <HomePage />
             },
             {
                 path: 'music',
-                element: <AlbumPage />
+                element: <Navigate to='/' />
             },
             {
                 path: '*',
                 element: <NotFoundPage />
+            }
+        ]
+    },
+    {
+        path: "/album/",
+        element: <ShawnHomeLayout />,
+        children: [
+            {
+                index: true,
+                element: <Navigate to='/music' />
+            },
+            {
+                path: ":idAlbum",
+                element: <AlbumPage />
             }
         ]
     }
