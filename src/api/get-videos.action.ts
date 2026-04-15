@@ -3,7 +3,7 @@ import { ShawnData } from "../shared/data/ShawnData"
 
 const albumData = ShawnData;
 
-export const getVideosAction = async (): Promise<VideoList[] | undefined> => {
+export const getVideosAction = async (): Promise<VideoList[]> => {
     await new Promise((res) => setTimeout(res, 1000));
 
     const data = albumData.flatMap((album) => album.videosList);

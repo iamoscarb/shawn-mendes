@@ -3,7 +3,7 @@ import type { MediaList, VideoList } from "./images.Interface";
 //types
 export type PlatformKey = 'spotify' | 'amazonMusic' | 'appleMusic' | 'otherMusic';
 export type PlatformName = 'Spotify' | 'Amazon Music' | 'Apple Music' | 'More';
-export type AlbumThemeKey = 'shawnAlbum' | 'wonderAlbum' | 'shawnMendesAlbum' | 'illuminateAlbum' | 'handwrittenAlbum';
+export type AlbumNameKey = 'shawnAlbum' | 'wonderAlbum' | 'shawnMendesAlbum' | 'illuminateAlbum' | 'handwrittenAlbum';
 
 //Music
 export interface Songs {
@@ -33,7 +33,7 @@ export interface Album {
 }
 
 export interface AlbumInfo extends Album {
-    albumKey: AlbumThemeKey;
+    albumKey: AlbumNameKey;
     bannerImages: BannerImg;
     albumLink: StreamingServices[];
     videosList: VideoList[];
