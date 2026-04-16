@@ -13,6 +13,7 @@ import type { AlbumNameKey } from '../../interfaces/music.interface';
 import { Navigate, useParams } from 'react-router';
 import { useAlbumEra } from '../../hooks/useAlbumEra';
 import { useEffect } from 'react';
+import { Loader } from '../../shared/components/Loader/Loader';
 
 export const AlbumPage = () => {
     const { idAlbum } = useParams();
@@ -28,7 +29,7 @@ export const AlbumPage = () => {
     }, [shawnInfo, setThemeName]);
 
     if (isError) return <Navigate to='/' />
-    if (!shawnInfo) return <h1>Loading...</h1>
+    if (!shawnInfo) return <Loader open={true} />
 
     return (
         <>
