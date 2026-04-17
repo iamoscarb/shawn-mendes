@@ -1,0 +1,1 @@
+export const TOUR_MESSAGE = 'There are no upcoming events.'

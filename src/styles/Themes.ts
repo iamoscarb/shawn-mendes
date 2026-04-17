@@ -10,7 +10,7 @@ export const themes: any = {
                 main: '#9ea0a3'
             },
             info: {
-                main: '#dae7ff'
+                main: '#acacac'
             },
             text: {
                 primary: '#121216'

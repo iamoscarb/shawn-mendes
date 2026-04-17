@@ -6,6 +6,10 @@ import { AlbumList } from '../../shared/components/ImageList/AlbumList';
 import type { AlbumImages } from '../../interfaces/images.Interface';
 import { MusicVideosList } from '../../shared/components/ImageList/MusicVideosList';
 import { useVideos } from '../../hooks/useVideos';
+import { useTourDates } from '../../hooks/useTourDates';
+import { TourTable } from '../../shared/components/TourTable/TourTable';
+import { Typography } from '@mui/material';
+import { TOUR_MESSAGE } from '../../shared/data/Titles';
 
 const albums: AlbumImages[] = [
     { title: 'Shawn', img: 'https://m.media-amazon.com/images/I/71ewAN10xmL._UF1000,1000_QL80_.jpg', root: '/album/shawnAlbum' },
@@ -18,7 +22,8 @@ const albums: AlbumImages[] = [
 export const HomePage = () => {
 
     const { setThemeName } = useThemeSwitcher();
-    const { data: videosInfo, isError } = useVideos();
+    const { data: videosInfo, isError: videosError } = useVideos();
+    const { data: tourInfo, isError: tourError } = useTourDates();
 
     setThemeName('home');
 
@@ -30,12 +35,29 @@ export const HomePage = () => {
                 <AlbumList photoList={albums} showTitle={true} style='album'></AlbumList>
             </BoxWithMargin>
 
-            {!videosInfo || isError || videosInfo.length > 0 && (
+            {videosInfo && !videosError && videosInfo.length > 0 && (
                 <BoxWithMargin bgColor='primary.main'>
                     <CustomDivider color='secondary.main' title='Videos'></CustomDivider>
                     <MusicVideosList videosList={videosInfo || []} />
                 </BoxWithMargin>
             )}
+
+            <BoxWithMargin bgColor='secondary.main'>
+                <CustomDivider color='primary.main' title='World Tour 2026'></CustomDivider>
+                {tourInfo && !tourError && tourInfo.length > 0 && (
+                    <TourTable tourData={tourInfo} />
+                )}
+
+                {!tourInfo || tourError || tourInfo.length === 0 && (
+                    <Typography variant='subtitle1' align='center'
+                        sx={{
+                            color: 'primary.dark',
+                            fontWeight: 'bold',
+                        }}>
+                        {TOUR_MESSAGE}
+                    </Typography>
+                )}
+            </BoxWithMargin>
         </>
     )
 }
