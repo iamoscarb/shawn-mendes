@@ -14,6 +14,7 @@ import { Navigate, useParams } from 'react-router';
 import { useAlbumEra } from '../../hooks/useAlbumEra';
 import { useEffect } from 'react';
 import { Loader } from '../../shared/components/Loader/Loader';
+import { ALBUM_TITLE, PHOTOS_TITLE, VIDEOS_TITLE } from '../../shared/data/Titles';
 
 export const AlbumPage = () => {
     const { idAlbum } = useParams();
@@ -36,20 +37,20 @@ export const AlbumPage = () => {
             <title>{shawnInfo.albumName + ' - The Album'}</title>
             <BannerImage mobilBanner={shawnInfo.bannerImages.mobilBanner} desktopBanner={shawnInfo.bannerImages.desktopBanner} />
             <BoxWithMargin bgColor='secondary.main'>
-                <CustomDivider color='primary.main' title='The Album'></CustomDivider>
+                <CustomDivider color='primary.dark' title={ALBUM_TITLE}></CustomDivider>
                 <CardMedia albumInfo={shawnInfo} onSongClicked={handleSongClick} />
                 <GroupButton services={shawnInfo.albumLink} onButtonClicked={useOpenLink} />
                 <DialogVideo song={songData} openDialog={openDialog} closeDialog={handleCloseDialog} />
             </BoxWithMargin>
 
             <BoxWithMargin bgColor='primary.main'>
-                <CustomDivider color='secondary.main' title='Videos'></CustomDivider>
+                <CustomDivider color='secondary.light' title={VIDEOS_TITLE}></CustomDivider>
                 <MusicVideosList videosList={shawnInfo?.videosList} />
             </BoxWithMargin>
 
             {shawnInfo?.photoList &&
                 (<BoxWithMargin bgColor='secondary.main'>
-                    <CustomDivider color='primary.main' title='Photos'></CustomDivider>
+                    <CustomDivider color='primary.dark' title={PHOTOS_TITLE}></CustomDivider>
                     <ImagesList photoList={shawnInfo?.photoList}></ImagesList>
                 </BoxWithMargin>
                 )}

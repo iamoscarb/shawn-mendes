@@ -9,7 +9,7 @@ import { useVideos } from '../../hooks/useVideos';
 import { useTourDates } from '../../hooks/useTourDates';
 import { TourTable } from '../../shared/components/TourTable/TourTable';
 import { Typography } from '@mui/material';
-import { TOUR_MESSAGE } from '../../shared/data/Titles';
+import { MUSIC_TITLE, TOUR_MESSAGE, VIDEOS_TITLE, WORLD_TOUR_TITLE } from '../../shared/data/Titles';
 
 const albums: AlbumImages[] = [
     { title: 'Shawn', img: 'https://m.media-amazon.com/images/I/71ewAN10xmL._UF1000,1000_QL80_.jpg', root: '/album/shawnAlbum' },
@@ -31,19 +31,19 @@ export const HomePage = () => {
         <>
             <BannerImage mobilBanner='banners/shawn-home-hero-desktop.webp' desktopBanner='banners/shawn-home-hero-desktop.webp' />
             <BoxWithMargin bgColor='secondary.main'>
-                <CustomDivider color='primary.main' title='Music'></CustomDivider>
+                <CustomDivider color='primary.dark' title={MUSIC_TITLE}></CustomDivider>
                 <AlbumList photoList={albums} showTitle={true} style='album'></AlbumList>
             </BoxWithMargin>
 
             {videosInfo && !videosError && videosInfo.length > 0 && (
                 <BoxWithMargin bgColor='primary.main'>
-                    <CustomDivider color='secondary.main' title='Videos'></CustomDivider>
+                    <CustomDivider color='secondary.light' title={VIDEOS_TITLE}></CustomDivider>
                     <MusicVideosList videosList={videosInfo || []} />
                 </BoxWithMargin>
             )}
 
             <BoxWithMargin bgColor='secondary.main'>
-                <CustomDivider color='primary.main' title='World Tour 2026'></CustomDivider>
+                <CustomDivider color='primary.dark' title={`${WORLD_TOUR_TITLE} ${new Date().getFullYear()}`}></CustomDivider>
                 {tourInfo && !tourError && tourInfo.length > 0 && (
                     <TourTable tourData={tourInfo} />
                 )}
