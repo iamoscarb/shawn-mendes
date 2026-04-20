@@ -10,6 +10,9 @@ import { useTourDates } from '../../hooks/useTourDates';
 import { TourTable } from '../../shared/components/TourTable/TourTable';
 import { Typography } from '@mui/material';
 import { MUSIC_TITLE, TOUR_MESSAGE, VIDEOS_TITLE, WORLD_TOUR_TITLE } from '../../shared/data/Titles';
+import { TOUR_DATES_SHOWED } from '../../shared/data/NumValues';
+import { CustomButton } from '../../shared/components/Button/CustomButton';
+import { Link } from 'react-router';
 
 const albums: AlbumImages[] = [
     { title: 'Shawn', img: 'https://m.media-amazon.com/images/I/71ewAN10xmL._UF1000,1000_QL80_.jpg', root: '/album/shawnAlbum' },
@@ -45,7 +48,15 @@ export const HomePage = () => {
             <BoxWithMargin bgColor='secondary.main'>
                 <CustomDivider color='primary.dark' title={`${WORLD_TOUR_TITLE} ${new Date().getFullYear()}`}></CustomDivider>
                 {tourInfo && !tourError && tourInfo.length > 0 && (
-                    <TourTable tourData={tourInfo} />
+                    <>
+                        <TourTable tourData={tourInfo.slice(0, TOUR_DATES_SHOWED)} />
+
+                        {tourInfo?.length > TOUR_DATES_SHOWED && (
+                            <Link to='/tour' className="flex justify-center items-center">
+                                <CustomButton text='Show More Dates' color='primary' />
+                            </Link>
+                        )}
+                    </>
                 )}
 
                 {!tourInfo || tourError || tourInfo.length === 0 && (

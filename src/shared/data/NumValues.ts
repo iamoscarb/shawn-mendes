@@ -1,0 +1,1 @@
+export const TOUR_DATES_SHOWED: number = 12;
