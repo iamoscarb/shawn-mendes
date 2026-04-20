@@ -3,6 +3,7 @@ import { ShawnHomeLayout } from "../shawnMendes/layout/ShawnHomeLayout";
 import { NotFoundPage } from "../shawnMendes/pages/NotFoundPage";
 import { AlbumPage } from "../shawnMendes/pages/AlbumPage";
 import { HomePage } from "../shawnMendes/pages/HomePage";
+import { LiveTourPage } from "../shawnMendes/pages/LiveTourPage";
 
 export const appRouter = createBrowserRouter([
     {
@@ -16,6 +17,10 @@ export const appRouter = createBrowserRouter([
             {
                 path: 'music',
                 element: <Navigate to='/' />
+            },
+            {
+                path: 'tour',
+                element: <LiveTourPage />
             },
             {
                 path: '*',
