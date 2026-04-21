@@ -32,6 +32,7 @@ export const HomePage = () => {
 
     return (
         <>
+            <title>Home - Shawn Mendes</title>
             <BannerImage mobilBanner='banners/shawn-home-hero-desktop.webp' desktopBanner='banners/shawn-home-hero-desktop.webp' />
             <BoxWithMargin bgColor='secondary.main'>
                 <CustomDivider color='primary.dark' title={MUSIC_TITLE}></CustomDivider>

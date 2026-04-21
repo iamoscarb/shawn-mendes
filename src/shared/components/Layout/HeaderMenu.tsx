@@ -38,15 +38,17 @@ export const HeaderMenu = () => {
                         xs: 'center', md: 'flex-start'
                     }
                 }}>
-                    <Box
-                        component="img"
-                        sx={{
-                            height: 30,
-                            mx: { md: 2 }
-                        }}
-                        alt="Shawn Mendes"
-                        src={logoImage}
-                    />
+                    <Link to='/'>
+                        <Box
+                            component="img"
+                            sx={{
+                                height: 30,
+                                mx: { md: 2 }
+                            }}
+                            alt="Shawn Mendes"
+                            src={logoImage}
+                        />
+                    </Link>
 
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         {pages.map((page) => (
