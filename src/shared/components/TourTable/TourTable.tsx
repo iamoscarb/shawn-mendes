@@ -21,7 +21,7 @@ export const TourTable = ({ tourData, glass = false, color = '#111' }: Props) =>
         <Container maxWidth="lg" className="pb-4">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
                 {tourData.map((date) => (
-                    <CardContent className="rounded-lg"
+                    <CardContent className="rounded-lg" key={`${date.date}`}
                         sx={{
                             backgroundColor: glass ? alpha('#bdbdbd', 0.5) : 'info.dark',
                             boxSizing: 'border-box',
