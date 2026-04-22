@@ -21,7 +21,7 @@ export const MusicPage = () => {
 
     return (
         <BoxWithMargin bgColor="secondary.light">
-            <title>`${MUSIC_TITLE} - Shawn Mendes`</title>
+            <title>{`${MUSIC_TITLE} - Shawn Mendes`}</title>
             <CustomTitle title={MUSIC_TITLE} />
             <Stack
                 direction='row'

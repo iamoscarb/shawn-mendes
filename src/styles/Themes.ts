@@ -26,7 +26,7 @@ export const themes: any = {
                 main: '#D9D9D9'
             },
             info: {
-                main: '#ebe8e8'
+                main: '#b6b6b6'
             },
             text: {
                 primary: '#111'
