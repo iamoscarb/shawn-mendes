@@ -5,13 +5,13 @@ import { SpotifyIcon } from "./SpotifyIcon";
 import { Typography } from "@mui/material";
 
 export const platformIcons: Record<string, JSX.Element> = {
-    spotify: <SpotifyIcon className="w-30" sx={{ color: 'primary.dark' }} />,
-    amazonMusic: <AmazonMusicIcon className="w-30" sx={{ color: 'primary.dark' }} />,
-    appleMusic: <AppleMusicIcon className="w-30" sx={{ color: 'primary.dark' }} />,
+    spotify: <SpotifyIcon className="w-30" sx={{ color: 'inherit' }} />,
+    amazonMusic: <AmazonMusicIcon className="w-30" sx={{ color: 'inherit' }} />,
+    appleMusic: <AppleMusicIcon className="w-30" sx={{ color: 'inherit' }} />,
     otherMusic: <Typography
         variant="h5"
         sx={{
-            color: 'primary.dark',
+            color: 'inherit',
             fontWeight: 'bold',
         }}
         className="font-bold text-2xl"

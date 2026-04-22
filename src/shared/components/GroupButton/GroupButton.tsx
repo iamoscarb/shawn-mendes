@@ -15,7 +15,13 @@ export const GroupButton: FC<Props> = ({ services, onButtonClicked }) => {
             {
                 services.map((service) => (
                     <Button variant='contained' color='info' size='large' key={service.key} onClick={() => onButtonClicked(service.link)}
-                        startIcon={platformIcons[service.key]} disableElevation>
+                        startIcon={platformIcons[service.key]} disableElevation sx={{
+                            color: 'primary.dark',
+                            '&:hover': {
+                                color: 'primary.main',
+                                backgroundColor: 'info.light'
+                            }
+                        }}>
                     </Button>
                 ))
             }
