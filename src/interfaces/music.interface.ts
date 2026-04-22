@@ -29,11 +29,14 @@ export interface Album {
     albumName: string;
     albumSinger: string;
     albumCover: string;
+    albumYear: number;
+    releasedType: string;
     albumTracks: Songs[];
 }
 
 export interface AlbumInfo extends Album {
     albumKey: AlbumNameKey;
+    albumSubtitle?: string;
     bannerImages: BannerImg;
     albumLink: StreamingServices[];
     videosList: VideoList[];

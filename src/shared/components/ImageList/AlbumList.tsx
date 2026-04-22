@@ -17,11 +17,13 @@ export const AlbumList = ({ photoList, showTitle, style }: Props) => {
     return (
         <ImageList sx={{ width: '100%', height: 'auto' }} variant="standard" cols={getCols()} gap={15}>
             {photoList.map((item) => (
-                <ImageListItem key={item.img} component={Link} to={item.root}>
+                <ImageListItem key={item.img}>
                     <div className="overflow-hidden rounded-lg">
-                        <img
-                            src={item.img} alt={item.title} loading="lazy"
-                            className="transition duration-300 ease-in-out hover:scale-110" />
+                        <Link to={item.root}>
+                            <img
+                                src={item.img} alt={item.title} loading="lazy"
+                                className="transition duration-300 ease-in-out hover:scale-110" />
+                        </Link>
                     </div>
 
                     {showTitle && (

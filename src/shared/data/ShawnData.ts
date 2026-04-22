@@ -6,6 +6,8 @@ export const ShawnData: AlbumInfo[] = [
         albumSinger: 'Shawn Mendes',
         albumKey: 'shawnAlbum',
         albumCover: 'https://m.media-amazon.com/images/I/71ewAN10xmL._UF1000,1000_QL80_.jpg',
+        albumYear: 2024,
+        releasedType: 'Album',
         bannerImages: {
             desktopBanner: '../banners/shawn-album-hero-desktop.webp',
             mobilBanner: 'https://images.genius.com/5fd36429abce8d036b835539485ed9f4.737x737x1.jpg'
@@ -48,8 +50,10 @@ export const ShawnData: AlbumInfo[] = [
         albumSinger: 'Shawn Mendes',
         albumKey: 'wonderAlbum',
         albumCover: 'https://m.media-amazon.com/images/I/71Q9an5gVGS._UF1000,1000_QL80_.jpg',
+        albumYear: 2020,
+        releasedType: 'Album',
         bannerImages: {
-            desktopBanner: '../banners/wonder-album-hero-desktop.webp',
+            desktopBanner: 'https://www.rollingstone.com/wp-content/uploads/2020/12/200831_ShawnMendes_shot4_5667_V1_Glen-Luchford.jpg',
             mobilBanner: 'https://images.genius.com/5fd36429abce8d036b835539485ed9f4.737x737x1.jpg'
         },
         albumTracks: [
