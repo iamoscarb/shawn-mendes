@@ -9,6 +9,7 @@ export const getMusicAction = async (type: MediaType): Promise<AlbumImages[]> =>
         .filter((item) => {
             return type.toLowerCase() === 'all' || item.releasedType.toUpperCase() === type.toUpperCase()
         })
+        .sort((a, b) => b.albumYear - a.albumYear)
         .map((music) => {
             return {
                 img: music.albumCover,
@@ -20,6 +21,6 @@ export const getMusicAction = async (type: MediaType): Promise<AlbumImages[]> =>
                     releasedType: music.releasedType as MediaType
                 }
             }
-        })
+        });
     return music
 }

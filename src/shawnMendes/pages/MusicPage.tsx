@@ -5,7 +5,7 @@ import { MUSIC_VALUES } from "../../shared/data/Values"
 import { CustomDivider } from "../../shared/components/Divider/CustomDivider"
 import { BoxWithMargin } from "../../shared/components/Box/BoxWithMargin"
 import { useMusic } from "../../hooks/useMusic"
-import { MUSIC_MESSAGE_ERROR } from "../../shared/data/Titles"
+import { MUSIC_MESSAGE_ERROR, MUSIC_TITLE } from "../../shared/data/Titles"
 import { AlbumList } from "../../shared/components/ImageList/AlbumList"
 import type { MediaType } from "../../interfaces/extraInfo.interface"
 
@@ -21,8 +21,8 @@ export const MusicPage = () => {
 
     return (
         <BoxWithMargin bgColor="secondary.light">
-            <title>Music - Shawn Mendes</title>
-            <CustomTitle title="Music" />
+            <title>`${MUSIC_TITLE} - Shawn Mendes`</title>
+            <CustomTitle title={MUSIC_TITLE} />
             <Stack
                 direction='row'
                 spacing={{ xs: 0.2, sm: 2, md: 3 }}
