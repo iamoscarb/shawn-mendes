@@ -12,7 +12,7 @@ export const LiveTourPage = () => {
         <>
             <title>{`Live Tour ${year}`}</title>
             <Box className="bg-[url('https://www.jambase.com/wp-content/uploads/2025/05/shawn-mendes-2025-tour-promo.jpg')] bg-cover bg-center bg-fixed min-h-screen w-full">
-                <div className="bg-white/35 pb-3">
+                <div className="bg-white/35 py-3">
                     <CustomTitle title={`${WORLD_TOUR_TITLE} ${year}`} color="#6A2D2B" />
 
                     {tourInfo && !tourError && tourInfo.length > 0 && (
