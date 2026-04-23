@@ -8,9 +8,10 @@ interface Props {
     photoList: AlbumImages[];
     style: configType;
     showTitle?: boolean;
+    showInfo?: boolean;
 }
 
-export const AlbumList = ({ photoList, showTitle, style }: Props) => {
+export const AlbumList = ({ photoList, style, showTitle = false, showInfo = false }: Props) => {
 
     const { getCols } = useNumColsImgList(style);
 
@@ -34,7 +35,7 @@ export const AlbumList = ({ photoList, showTitle, style }: Props) => {
                                 </h2>
                             </div>
                             }
-                            subtitle={item?.extraInfo?.releasedType && item?.extraInfo?.releasedYear && (
+                            subtitle={showInfo && item?.extraInfo?.releasedType && item?.extraInfo?.releasedYear && (
                                 <Box className="w-full flex justify-start text-center" sx={{ color: 'primary.main', borderColor: 'primary.main' }}>
                                     <p className="w-auto rounded-sm border-2 border-solid py-1 px-2 mr-3">{item.extraInfo.releasedYear}</p>
                                     <p className="w-auto rounded-sm border-2 border-solid py-1 px-2">{item.extraInfo.releasedType.toUpperCase()}</p>

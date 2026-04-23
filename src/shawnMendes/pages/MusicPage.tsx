@@ -54,7 +54,7 @@ export const MusicPage = () => {
             )}
 
             {!isError && musicData && musicData.length > 0 && (
-                <AlbumList photoList={musicData} showTitle={true} style='album' />
+                <AlbumList photoList={musicData} showTitle={true} showInfo={true} style='album' />
             )}
         </BoxWithMargin>
     )
