@@ -10,5 +10,5 @@ export const SocialMediaIcons: Record<string, JSX.Element> = {
     instagram: <InstagramIcon className='text-white' />,
     x: <XIcon className='text-white' />,
     youtube: <YouTubeIcon className='text-white' />,
-    tiktok: <TiktokIcon color="#fff" />
+    tiktok: <TiktokIcon sx={{ color: 'white' }} />
 }
