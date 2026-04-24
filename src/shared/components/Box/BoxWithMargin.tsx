@@ -1,7 +1,7 @@
 import { Box } from "@mui/material"
+import type { PropsWithChildren } from "react";
 
-interface Props {
-    children: any;
+interface Props extends PropsWithChildren {
     bgColor: string;
 }
 
