@@ -11,7 +11,7 @@ const socialMediaList = [
 
 export const Footer = () => {
     return (
-        <Box className='grid grid-flow-row flex justify-center p-5' sx={{ bgcolor: 'primary.main' }}>
+        <Box className='grid grid-flow-row justify-center p-5' sx={{ bgcolor: 'primary.main' }}>
             <div className="grid grid-flow-col gap-3">
                 {
                     socialMediaList.map((social) => (

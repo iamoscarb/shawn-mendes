@@ -34,7 +34,7 @@ export const TourTable = ({ tourData, glass = false, color = '#111' }: Props) =>
                         }}>
                         <div className="flex items-center justify-center gap-3">
                             {/* Date Block */}
-                            <Card className="flex flex-col items-center justify-center bg-primary text-primary-foreground rounded-lg p-3 min-w-[70px]"
+                            <Card className="flex flex-col items-center justify-center bg-primary text-primary-foreground rounded-lg p-3 min-w-17.5"
                                 sx={{ backgroundColor: glass ? alpha('#fff', 0.2) : 'info.main' }}>
                                 <span className={`text-[${color}] text-2xl font-bold leading-none`}>{dateFormat(date.date).day}</span>
                                 <span className={`text-[${color}] text-xs uppercase font-semibold tracking-wider`}>
