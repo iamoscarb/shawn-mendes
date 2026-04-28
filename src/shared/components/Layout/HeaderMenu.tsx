@@ -53,8 +53,14 @@ export const HeaderMenu = () => {
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         {pages.map((page) => (
                             <Button component={Link} key={page.name}
-                                to={page.root} className='white-text'
-                                sx={{ my: 2, mx: 0.5, color: 'white', display: 'block' }}>
+                                to={page.root}
+                                sx={{
+                                    my: 2, mx: 0.5, display: 'block',
+                                    color: '#f1f1f1',
+                                    '&:hover': {
+                                        color: 'secondary.dark'
+                                    }
+                                }}>
                                 {page.name}
                             </Button>
                         ))}
@@ -85,7 +91,13 @@ export const HeaderMenu = () => {
                 }}>
                     {pages.map((page) => (
                         <Button component={Link} key={page.name} onClick={handleOpenNavMenu} style={{ margin: '20px 0' }}
-                            className='text-xl hover:text-gray-700' to={page.root} color='secondary' size='large'>
+                            className='text-xl hover:text-gray-700' to={page.root} size='large'
+                            sx={{
+                                color: '#f1f1f1',
+                                '&:hover': {
+                                    color: 'secondary.dark'
+                                }
+                            }}>
                             {page.name.toUpperCase()}
                         </Button>
                     ))}
