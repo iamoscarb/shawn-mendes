@@ -75,9 +75,9 @@ export const HeaderMenu = () => {
             </Container>
             <Collapse in={openMenu} timeout="auto" unmountOnExit>
                 <Box sx={{
-                    height: '89vh',
+                    height: '100vh',
                     width: '100%',
-                    bgcolor: 'black',
+                    bgcolor: 'bg-(--mui-palette-primary)',
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
@@ -85,7 +85,7 @@ export const HeaderMenu = () => {
                 }}>
                     {pages.map((page) => (
                         <Button component={Link} key={page.name} onClick={handleOpenNavMenu} style={{ margin: '20px 0' }}
-                            className='text-xl hover:text-gray-700' to={page.root}>
+                            className='text-xl hover:text-gray-700' to={page.root} color='secondary' size='large'>
                             {page.name.toUpperCase()}
                         </Button>
                     ))}
