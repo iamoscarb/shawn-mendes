@@ -11,7 +11,7 @@ export const LiveTourPage = () => {
     return (
         <>
             <title>{`Live Tour ${year}`}</title>
-            <Box className="bg-[url('https://www.jambase.com/wp-content/uploads/2025/05/shawn-mendes-2025-tour-promo.jpg')] bg-cover bg-center bg-fixed min-h-screen w-full">
+            <Box className="bg-[url('https://www.jambase.com/wp-content/uploads/2025/05/shawn-mendes-2025-tour-promo.jpg')] bg-cover object-top-left bg-fixed min-h-screen w-full">
                 <div className="bg-white/35 py-3">
                     <CustomTitle title={`${WORLD_TOUR_TITLE} ${year}`} color="#6A2D2B" />
 
