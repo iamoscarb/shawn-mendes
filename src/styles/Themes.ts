@@ -29,7 +29,7 @@ export const themes: any = {
                 main: '#b6b6b6'
             },
             text: {
-                primary: '#111'
+                primary: '#262626'
             }
         }
     }),
@@ -45,7 +45,7 @@ export const themes: any = {
                 main: '#B8BECE'
             },
             text: {
-                primary: '#62738F'
+                primary: '#55647D'
             }
         }
     })
