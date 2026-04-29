@@ -1,13 +1,7 @@
 import { Box, IconButton } from "@mui/material"
 import { SocialMediaIcons } from "../../Icons/SocialMediaIcons"
-
-const socialMediaList = [
-    { nameSocial: 'facebook', url: 'facebook.com' },
-    { nameSocial: 'instagram', url: 'instagram.com' },
-    { nameSocial: 'x', url: 'x.com' },
-    { nameSocial: 'youtube', url: 'youtube.com' },
-    { nameSocial: 'tiktok', url: 'tiktok.com' },
-]
+import { useOpenLink } from "../../../hooks/useOpenLink"
+import { socialMediaList } from "../../data/SocialMedia"
 
 export const Footer = () => {
     return (
@@ -15,7 +9,8 @@ export const Footer = () => {
             <div className="grid grid-flow-col gap-3">
                 {
                     socialMediaList.map((social) => (
-                        <IconButton aria-label={social.nameSocial} key={social.nameSocial}>
+                        <IconButton aria-label={social.nameSocial} key={social.nameSocial}
+                            onClick={() => useOpenLink(social.url)}>
                             {SocialMediaIcons[social.nameSocial]}
                         </IconButton>
                     ))

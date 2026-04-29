@@ -22,7 +22,7 @@ export const DialogVideo: FC<Props> = ({ song, openDialog, closeDialog }) => {
             <DialogContent className='relative p-0'>
                 <div className="relative w-full aspect-video">
                     <iframe className='absolute inset-0 w-full h-full rounded-lg'
-                        src={`${YOUTUBE_LINK}/${song.url}?autoplay=1`}
+                        src={`${YOUTUBE_LINK}embed/${song.url}?autoplay=1`}
                         title={`${song.singer} - ${song.name}`}
                         allow="autoplay; fullscreen" allowFullScreen></iframe>
                 </div>
