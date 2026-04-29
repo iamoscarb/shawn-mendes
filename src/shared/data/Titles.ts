@@ -8,3 +8,4 @@ export const WATCH_NOW = 'Watch Now';
 
 export const TOUR_MESSAGE = 'There are no upcoming events.'
 export const MUSIC_MESSAGE_ERROR = 'There are no music to show.'
+export const LOADING_MESSAGE = 'Loading...'
