@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+@font-face {
+    font-family: shawnMendesRegular;
+    src: url('./assets/fonts/AFShawnMendes-Regular.woff2');
+}
+
+@theme {
+    --font-shawnMendes: shawnMendesRegular, sans-serif;
+}
+
 ::-webkit-scrollbar {
     width: 9px;
 }
