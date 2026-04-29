@@ -1,5 +1,4 @@
-import { useEffect, useState } from 'react';
-import { AppBar, Button, Collapse, useMediaQuery, useTheme } from '@mui/material';
+import { AppBar, Button, Collapse } from '@mui/material';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
@@ -7,28 +6,14 @@ import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import Container from '@mui/material/Container';
 import { Link } from 'react-router';
+import { useChangeScreenSize } from '../../../hooks/useChangeScreenSize';
 
 
 const pages = [{ name: 'Music', root: '/music' }, { name: 'Videos', root: '/videos' }, { name: 'Tour', root: '/tour' }, { name: 'Subscribe', root: '/' }];
 const logoImage = 'https://www.shawnmendesofficial.com/wp-content/uploads/sites/2687/2024/07/Shawn-Mendes-600x85.png'
 
 export const HeaderMenu = () => {
-    const [openMenu, setOpenMenu] = useState(false)
-
-    const theme = useTheme();
-    const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
-
-    const handleOpenNavMenu = () => {
-        setOpenMenu((prev) => {
-            return !prev;
-        })
-    };
-
-    useEffect(() => {
-        if (isDesktop && openMenu) {
-            setOpenMenu(false)
-        }
-    }, [isDesktop, openMenu])
+    const { openMenu, handleOpenMenu: handleOpenNavMenu } = useChangeScreenSize();
 
     return (
         <AppBar position="sticky">
