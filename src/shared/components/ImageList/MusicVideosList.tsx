@@ -32,6 +32,7 @@ export const MusicVideosList = ({ videosList }: Props) => {
                             overflow: 'hidden',
                             textOverflow: 'ellipsis',
                             display: 'block',
+                            fontFamily: 'Lato'
                         }
                     }} />
                 </ImageListItem>

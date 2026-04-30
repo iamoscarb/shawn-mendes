@@ -39,7 +39,8 @@ export const AdvancedFilters = ({ typeMode, handleSearchParams }: Props) => {
                         onClick={() => handleSearchParams(type.key)}
                         sx={{
                             transition: 'all 0.3s ease-in-out',
-                            transform: 'scale(1)'
+                            transform: 'scale(1)',
+                            fontFamily: 'Lato'
                         }} />
                 ))}
             </Stack>

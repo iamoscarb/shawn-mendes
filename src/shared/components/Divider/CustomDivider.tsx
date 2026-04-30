@@ -14,10 +14,11 @@ export const CustomDivider = ({ color, title }: Props) => {
         }}>
             {!!title && (
                 <Typography
-                    variant="h5"
+                    variant="h4"
                     sx={{
                         color: color ?? 'info.light',
                         fontWeight: 'bold',
+                        fontFamily: 'shawnMendesRegular'
                     }}
                     className="font-bold text-2xl"
                 >

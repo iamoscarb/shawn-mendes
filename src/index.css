@@ -9,6 +9,10 @@
     --font-shawnMendes: shawnMendesRegular, sans-serif;
 }
 
+@theme {
+    --font-lato: Lato, sans-serif;
+}
+
 ::-webkit-scrollbar {
     width: 9px;
 }

@@ -10,6 +10,7 @@ export const CustomText = ({ text }: Props) => {
             sx={{
                 color: 'inherit',
                 fontWeight: 'bold',
+                fontFamily: 'Lato'
             }}
             className="font-bold text-2xl"
         >

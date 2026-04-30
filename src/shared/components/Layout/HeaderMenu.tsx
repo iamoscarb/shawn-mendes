@@ -9,7 +9,7 @@ import { Link } from 'react-router';
 import { useChangeScreenSize } from '../../../hooks/useChangeScreenSize';
 
 
-const pages = [{ name: 'Music', root: '/music' }, { name: 'Videos', root: '/videos' }, { name: 'Tour', root: '/tour' }, { name: 'Subscribe', root: '/' }];
+const pages = [{ name: 'Music', root: '/music' }, { name: 'Videos', root: '/videos' }, { name: 'Tour', root: '/tour' }, { name: 'Subscribe', root: 'https://tr.ee/WmN138c7YX' }];
 const logoImage = 'https://www.shawnmendesofficial.com/wp-content/uploads/sites/2687/2024/07/Shawn-Mendes-600x85.png'
 
 export const HeaderMenu = () => {
@@ -42,6 +42,8 @@ export const HeaderMenu = () => {
                                 sx={{
                                     my: 2, mx: 0.5, display: 'block',
                                     color: '#f1f1f1',
+                                    fontFamily: 'shawnMendesRegular',
+                                    textAlign: 'center',
                                     '&:hover': {
                                         color: 'secondary.dark'
                                     }
@@ -78,6 +80,8 @@ export const HeaderMenu = () => {
                         <Button component={Link} key={page.name} onClick={handleOpenNavMenu} style={{ margin: '20px 0' }}
                             className='text-xl hover:text-gray-700' to={page.root} size='large'
                             sx={{
+                                fontFamily: 'shawnMendesRegular',
+                                fontSize: '20px',
                                 color: '#f1f1f1',
                                 '&:hover': {
                                     color: 'secondary.dark'

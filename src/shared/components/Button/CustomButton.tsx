@@ -18,6 +18,7 @@ export const CustomButton = ({ text, color, icon }: Props) => {
                 border: 2,
                 borderColor: getColor(color),
                 color: getColor(color),
+                fontFamily: 'Lato',
                 '&:hover': {
                     backgroundColor: getColor(color),
                     color: getInvestedColor(color)
