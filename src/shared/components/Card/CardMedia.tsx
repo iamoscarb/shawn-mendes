@@ -1,7 +1,8 @@
+import type { FC } from "react";
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import type { FC } from "react";
+import ExplicitIcon from '@mui/icons-material/Explicit';
 import type { Album, Songs } from '../../../interfaces/music.interface';
 
 interface Props {
@@ -23,10 +24,10 @@ export const CardMedia: FC<Props> = ({ albumInfo, onSongClicked }) => {
                 src={albumCover}
                 alt={albumName}
             />
-            <Box className="flex flex-col w-full pt-2 md:pl-2 md:pt-0">
+            <Box className="flex flex-col w-full md:pl-2 md:pt-0">
                 <CardContent sx={{ flex: '1 0 auto' }}>
-                    <h1 className="text-center text-2xl font-medium md:text-left text-(--mui-palette-primary)/50 bt-0 font-lato">{albumName}</h1>
-                    <h2 className="text-center text-(--mui-palette-text-primary) mb-1 md:text-left font-lato">{albumSinger}</h2>
+                    <h1 className="text-center text-3xl lg:text-2xl font-bold md:text-left text-(--mui-palette-primary)/50 bt-0 font-lato">{albumName}</h1>
+                    <h2 className="text-center text-lg lg:text-base text-(--mui-palette-text-primary) mb-1 md:text-left font-lato">{albumSinger}</h2>
                     <div className="songs-card w-full max-h-68 md:max-h-55 overflow-y-auto font-lato">
                         {
                             albumTracks.map((song) => (
@@ -44,7 +45,8 @@ export const CardMedia: FC<Props> = ({ albumInfo, onSongClicked }) => {
 
                                         <div className="flex flex-col text-left">
                                             <h3 className="text-(--mui-palette-text-primary)/50 font-medium leading-tight text-[15px] w-70">{song.name}</h3>
-                                            <p className="italic text-[13px] text-gray-700/80 group-hover:text-(--mui-palette-text-primary)/5">{song.singer}</p>
+                                            <p className="flex items-center gap-1 italic text-[13px] text-gray-700/80 group-hover:text-(--mui-palette-text-primary)/5 leading-none">
+                                                {song.explicit && (<ExplicitIcon color="inherit" sx={{ fontSize: '13px' }} />)} {song.singer}</p>
                                         </div>
                                     </div>
 

@@ -12,6 +12,7 @@ export interface Songs {
     singer: string;
     time?: string;
     url?: string;
+    explicit?: boolean;
 }
 
 export interface BannerImg {
