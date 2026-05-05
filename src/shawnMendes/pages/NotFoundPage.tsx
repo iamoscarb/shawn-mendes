@@ -1,11 +1,13 @@
-import { Box } from "@mui/material"
 import { useEffect, useState } from "react"
 import { PHRASES } from "../../shared/data/Phrases";
+import { CustomMessage } from "../../shared/components/CustomMessage/CustomMessage";
+import { NOT_FOUND_MESSAGE } from "../../shared/data/Titles";
 
 export const NotFoundPage = () => {
 
     const array = PHRASES;
-    const [title, setTitle] = useState(array[0])
+    const notFound = NOT_FOUND_MESSAGE;
+    const [title, setTitle] = useState(array[0]);
 
     useEffect(() => {
         document.title = 'Page Not Found';
@@ -14,9 +16,6 @@ export const NotFoundPage = () => {
     }, []);
 
     return (
-        <Box sx={{ backgroundColor: 'secondary.main' }} className="h-dvh text-center px-10 content-center">
-            <h1 className="text-3xl font-bold text-white">{title.toUpperCase()}</h1>
-            <p className="text-2xl font-light text-white pt-3">The page you requested does not exist or isn't avaliable</p>
-        </Box>
+        <CustomMessage title={title} subtitle={notFound} />
     )
 }

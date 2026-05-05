@@ -5,11 +5,13 @@ import { AlbumPage } from "../shawnMendes/pages/AlbumPage";
 import { HomePage } from "../shawnMendes/pages/HomePage";
 import { LiveTourPage } from "../shawnMendes/pages/LiveTourPage";
 import { MusicPage } from "../shawnMendes/pages/MusicPage";
+import { ErrorPage } from "../shawnMendes/pages/ErrorPage";
 
 export const appRouter = createBrowserRouter([
     {
         path: "/",
         element: <ShawnHomeLayout />,
+        errorElement: <Navigate to='/error' />,
         children: [
             {
                 index: true,
@@ -24,6 +26,10 @@ export const appRouter = createBrowserRouter([
                 element: <LiveTourPage />
             },
             {
+                path: 'error',
+                element: <ErrorPage />
+            },
+            {
                 path: '*',
                 element: <NotFoundPage />
             }
@@ -32,6 +38,7 @@ export const appRouter = createBrowserRouter([
     {
         path: "/album/",
         element: <ShawnHomeLayout />,
+        errorElement: <Navigate to='/error' />,
         children: [
             {
                 index: true,
