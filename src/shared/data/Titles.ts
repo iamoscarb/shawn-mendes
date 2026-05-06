@@ -9,6 +9,7 @@ export const WATCH_NOW = 'Watch Now';
 
 export const TOUR_MESSAGE = 'There are no upcoming events.';
 export const MUSIC_MESSAGE_ERROR = 'There are no music to show.';
+export const VIDEOS_MESSAGE_ERROR = 'There are no videos to show';
 export const LOADING_MESSAGE = 'Loading...';
 export const NOT_FOUND_MESSAGE = `The page you requested does not exist or isn't avaliable`;
 export const ERROR_MESSAGE = `An unknown error occured. Please try again after a while`;

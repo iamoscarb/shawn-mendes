@@ -6,6 +6,7 @@ import { HomePage } from "../shawnMendes/pages/HomePage";
 import { LiveTourPage } from "../shawnMendes/pages/LiveTourPage";
 import { MusicPage } from "../shawnMendes/pages/MusicPage";
 import { ErrorPage } from "../shawnMendes/pages/ErrorPage";
+import { MusicVideosPage } from "../shawnMendes/pages/MusicVideosPage";
 
 export const appRouter = createBrowserRouter([
     {
@@ -20,6 +21,10 @@ export const appRouter = createBrowserRouter([
             {
                 path: 'music',
                 element: <MusicPage />
+            },
+            {
+                path: 'videos',
+                element: <MusicVideosPage />
             },
             {
                 path: 'tour',
