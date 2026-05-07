@@ -5,8 +5,9 @@ import { BoxWithMargin } from "../../shared/components/Box/BoxWithMargin"
 import { CustomDivider } from "../../shared/components/Divider/CustomDivider"
 import { CustomTitle } from "../../shared/components/Title/CustomTitle"
 import { VIDEOS_MESSAGE_ERROR, VIDEOS_TITLE } from "../../shared/data/Titles"
-import { MusicVideosList } from "../../shared/components/ImageList/MusicVideosList"
 import { CustomButton } from "../../shared/components/Button/CustomButton"
+import { CustomImageList } from "../../shared/components/ImageList/CustomImageList"
+import { CustomImageItem } from "../../shared/components/ImageList/CustomImageItem"
 
 export const MusicVideosPage = () => {
     const { data: videosData, isError, isLoading, fetchNextPage, hasNextPage, isFetchingNextPage } = useVideos();
@@ -26,10 +27,12 @@ export const MusicVideosPage = () => {
                 </Box>
             )}
 
-            {videosData?.pages.map((page, i) => (
-                <MusicVideosList key={`videos${i}`} videosList={page.videos} textColor="text-(--mui-palette-primary) font-bold" />
-            )
-            )}
+            <CustomImageList type="video">
+                {videosData?.pages.map((page, i) => (
+                    <CustomImageItem key={`videos${i}`} videosList={page.videos} textColor="text-(--mui-palette-primary) font-bold" />
+                )
+                )}
+            </CustomImageList>
 
             {!isLoading && hasNextPage && (<div className="flex justify-center items-center">
                 <CustomButton
