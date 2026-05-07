@@ -4,15 +4,19 @@ import { useGetColors } from "./hooks/useGetColors";
 interface Props {
     text: string;
     color: string;
-    icon?: any
+    icon?: any;
+    disabled?: boolean;
+    handleOnClick?: () => void;
 }
 
 const { getInvestedColor, getColor } = useGetColors();
 
-export const CustomButton = ({ text, color, icon }: Props) => {
+export const CustomButton = ({ text, color, icon, disabled = false, handleOnClick }: Props) => {
     return (
         <Button variant="outlined"
             startIcon={icon}
+            onClick={handleOnClick}
+            disabled={disabled}
             sx={{
                 borderRadius: '20px',
                 border: 2,
