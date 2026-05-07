@@ -8,9 +8,12 @@ import { VIDEOS_MESSAGE_ERROR, VIDEOS_TITLE } from "../../shared/data/Titles"
 import { CustomButton } from "../../shared/components/Button/CustomButton"
 import { CustomImageList } from "../../shared/components/ImageList/CustomImageList"
 import { CustomImageItem } from "../../shared/components/ImageList/CustomImageItem"
+import { useOpenVideoDialog } from "../../hooks/useOpenVideoDialog"
+import { DialogVideo } from "../../shared/components/Dialog/DialogVideo"
 
 export const MusicVideosPage = () => {
     const { data: videosData, isError, isLoading, fetchNextPage, hasNextPage, isFetchingNextPage } = useVideos();
+    const { handleCloseDialog, handleSongClick: handleVideoClick, openDialog, songData: videoData } = useOpenVideoDialog()
     return (
         <BoxWithMargin bgColor="secondary.light">
             <title>{`${VIDEOS_TITLE} - Shawn Mendes`}</title>
@@ -29,10 +32,11 @@ export const MusicVideosPage = () => {
 
             <CustomImageList type="video">
                 {videosData?.pages.map((page, i) => (
-                    <CustomImageItem key={`videos${i}`} videosList={page.videos} textColor="text-(--mui-palette-primary) font-bold" />
+                    <CustomImageItem key={`videos${i}`} videosList={page.videos} textColor="text-(--mui-palette-primary) font-bold" onVideoClicked={handleVideoClick} />
                 )
                 )}
             </CustomImageList>
+            <DialogVideo song={videoData} openDialog={openDialog} closeDialog={handleCloseDialog} />
 
             {!isLoading && hasNextPage && (<div className="flex justify-center items-center">
                 <CustomButton

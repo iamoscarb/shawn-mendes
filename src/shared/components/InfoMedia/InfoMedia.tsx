@@ -14,6 +14,7 @@ interface MediaData {
 interface Props extends PropsWithChildren {
     mediaData: MediaData
 }
+
 export const InfoMedia = ({ children, mediaData }: Props) => {
 
     return (
