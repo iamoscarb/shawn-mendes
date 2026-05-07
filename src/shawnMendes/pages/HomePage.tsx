@@ -31,10 +31,10 @@ export const HomePage = () => {
                 <AlbumList photoList={albumInfo || []} showTitle={true} style='album'></AlbumList>
             </BoxWithMargin>
 
-            {videosInfo && !videosError && videosInfo.length > 0 && (
+            {videosInfo && !videosError && videosInfo.pages[0].videos.length > 0 && (
                 <BoxWithMargin bgColor='primary.main'>
                     <CustomDivider color='secondary.light' title={VIDEOS_TITLE}></CustomDivider>
-                    <MusicVideosList videosList={videosInfo || []} />
+                    <MusicVideosList videosList={videosInfo.pages[0].videos || []} />
                 </BoxWithMargin>
             )}
 
