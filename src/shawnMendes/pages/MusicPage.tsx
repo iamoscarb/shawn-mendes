@@ -14,7 +14,9 @@ export const MusicPage = () => {
         <BoxWithMargin bgColor="secondary.light">
             <title>{`${MUSIC_TITLE} - Shawn Mendes`}</title>
             <CustomTitle title={MUSIC_TITLE} />
-            <AdvancedFilters typeMode={typeMode} handleSearchParams={handleSearchParams} />
+            <div className="pt-2">
+                <AdvancedFilters typeMode={typeMode} handleSearchParams={handleSearchParams} />
+            </div>
             <CustomDivider color="primary.main" />
             <br />
             {
