@@ -5,9 +5,10 @@ import type { VideoList } from "../../../interfaces/images.Interface";
 
 interface Props {
     videosList: VideoList[];
+    textColor?: string;
 }
 
-export const MusicVideosList = ({ videosList }: Props) => {
+export const MusicVideosList = ({ videosList, textColor = 'text-white' }: Props) => {
 
     const { getCols } = useNumColsImgList('video');
 
@@ -26,7 +27,7 @@ export const MusicVideosList = ({ videosList }: Props) => {
                             </div>
                         </div>
                     </div>
-                    <ImageListItemBar title={item.title} position="below" className="text-white" sx={{
+                    <ImageListItemBar title={item.title} position="below" className={`${textColor}`} sx={{
                         '& .MuiImageListItemBar-title': {
                             whiteSpace: 'nowrap',
                             overflow: 'hidden',

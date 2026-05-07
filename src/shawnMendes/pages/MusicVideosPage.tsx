@@ -7,14 +7,14 @@ import { VIDEOS_MESSAGE_ERROR, VIDEOS_TITLE } from "../../shared/data/Titles"
 import { MusicVideosList } from "../../shared/components/ImageList/MusicVideosList"
 
 export const MusicVideosPage = () => {
-    const { data: videosData, isError, isLoading } = useVideos();
+    const { data: videosData, isError, isLoading, fetchNextPage, hasNextPage, isFetchingNextPage } = useVideos();
     return (
         <BoxWithMargin bgColor="secondary.light">
             <title>{`${VIDEOS_TITLE} - Shawn Mendes`}</title>
             <CustomTitle title={VIDEOS_TITLE} />
             <CustomDivider color="primary.main" />
             <br />
-            {isLoading || isError || !videosData || videosData.length === 0 && (
+            {isLoading || isError || !videosData || videosData.pages.length === 0 && (
                 <Box className="h-screen text-center">
                     <Typography variant="subtitle1" align="center"
                         sx={{ color: 'primary.dark', fontWeight: 'bold' }}>
@@ -23,8 +23,10 @@ export const MusicVideosPage = () => {
 
                 </Box>
             )}
-            {!isError && videosData && videosData.length > 0 && (
-                <MusicVideosList videosList={videosData || []} />
+
+            {videosData?.pages.map((page, i) => (
+                <MusicVideosList key={`videos${i}`} videosList={page.videos} textColor="text-(--mui-palette-primary) font-bold" />
+            )
             )}
         </BoxWithMargin>
     )
