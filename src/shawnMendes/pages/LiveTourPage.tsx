@@ -16,7 +16,7 @@ export const LiveTourPage = () => {
                     <CustomTitle title={`${WORLD_TOUR_TITLE} ${year}`} color="#6A2D2B" />
 
                     {tourInfo && !tourError && tourInfo.length > 0 && (
-                        <div>
+                        <div className="pt-2">
                             <TourTable tourData={tourInfo} glass={true} color="#6A2D2B" />
                         </div>
                     )}
