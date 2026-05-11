@@ -38,17 +38,19 @@ export const MusicVideosPage = () => {
             </CustomImageList>
             <DialogVideo song={videoData} openDialog={openDialog} closeDialog={handleCloseDialog} />
 
-            {!isLoading && hasNextPage && (<div className="flex justify-center items-center">
-                <CustomButton
-                    text={isFetchingNextPage ? 'Loading...'
-                        : hasNextPage
-                            ? 'Load more'
-                            : 'No more videos'}
-                    color="primary"
-                    icon={isFetchingNextPage ? <CircularProgress color="inherit" size={20} /> : null}
-                    disabled={!hasNextPage || isFetchingNextPage}
-                    handleOnClick={fetchNextPage} />
-            </div>)}
+            {!isLoading && hasNextPage && (
+                <div className="flex justify-center items-center">
+                    <CustomButton
+                        text={isFetchingNextPage ? 'Loading...'
+                            : hasNextPage
+                                ? 'Load more'
+                                : 'No more videos'}
+                        color="primary"
+                        icon={isFetchingNextPage ? <CircularProgress color="inherit" size={20} /> : null}
+                        disabled={!hasNextPage || isFetchingNextPage}
+                        handleOnClick={fetchNextPage} />
+                </div>
+            )}
         </BoxWithMargin>
     )
 }
