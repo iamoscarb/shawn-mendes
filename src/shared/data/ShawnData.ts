@@ -1,6 +1,30 @@
 import type { AlbumInfo } from "../../interfaces/music.interface";
 
 export const ShawnData: AlbumInfo[] = [
+    { // Home - The Single,
+        albumName: 'Home',
+        albumSinger: 'Shawn Mendes',
+        albumSubtitle: '(with Eddie Benjamin)',
+        albumKey: 'homeSingle',
+        albumCover: 'https://m.media-amazon.com/images/I/41iJdUsvTRL._UXNaN_FMjpg_QL85_.jpg',
+        albumYear: 2025,
+        releasedType: 'Single',
+        bannerImages: {
+            desktopBanner: '',
+            mobilBanner: ''
+        },
+        albumTracks: [
+            { name: 'Home', singer: 'Shawn Mendes & Eddie Benjamin', time: "02:41", track: 1, url: '' }
+        ],
+        albumLink: [
+            { key: 'spotify', platform: 'Spotify', link: 'https://open.spotify.com/intl-es/album/5FYFgRnlsl9Qrm1xD8cqo7' },
+            { key: 'amazonMusic', platform: 'Amazon Music', link: 'https://music.amazon.com.mx/albums/B0DC759W8V' },
+            { key: 'appleMusic', platform: 'Apple Music', link: 'https://music.apple.com/es/album/shawn/1761182577' },
+            { key: 'otherMusic', platform: 'More', link: 'https://shawn.lnk.to/album' }],
+        videosList: [
+
+        ]
+    },
     { //Shawn - The Album
         albumName: 'Shawn',
         albumSinger: 'Shawn Mendes',
@@ -90,5 +114,28 @@ export const ShawnData: AlbumInfo[] = [
             { title: 'wonder shawn', img: 'https://i.pinimg.com/1200x/b4/01/03/b40103a7d34a98cd940d3259e2f90dc6.jpg' },
             { title: 'shawn', img: 'https://i.pinimg.com/736x/3b/86/e5/3b86e54a2b3e525662edc2e78a321133.jpg' },
         ]
-    }
+    },
+    { // Shawn Mendes - The Album,
+        albumName: 'Shawn Mendes',
+        albumSinger: 'Shawn Mendes',
+        albumKey: 'shawnMendesAlbum',
+        albumCover: 'https://m.media-amazon.com/images/I/A16Tg1LfILL._UF1000,1000_QL80_.jpg',
+        albumYear: 2018,
+        releasedType: 'Album',
+        bannerImages: {
+            desktopBanner: '',
+            mobilBanner: ''
+        },
+        albumTracks: [
+            { name: 'Home', singer: 'Shawn Mendes & Eddie Benjamin', time: "02:41", track: 1, url: '' }
+        ],
+        albumLink: [
+            { key: 'spotify', platform: 'Spotify', link: 'https://open.spotify.com/intl-es/album/5FYFgRnlsl9Qrm1xD8cqo7' },
+            { key: 'amazonMusic', platform: 'Amazon Music', link: 'https://music.amazon.com.mx/albums/B0DC759W8V' },
+            { key: 'appleMusic', platform: 'Apple Music', link: 'https://music.apple.com/es/album/shawn/1761182577' },
+            { key: 'otherMusic', platform: 'More', link: 'https://shawn.lnk.to/album' }],
+        videosList: [
+
+        ]
+    },
 ]
